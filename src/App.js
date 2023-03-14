@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import Root from "./components/root";
+import Login from "./components/login";
+import Register from "./components/register";
 
 const App = () => {
-  const [hide, setHide] = useState(false);
-  const [text, setText] = useState("Hello World IIMS");
-
-  useEffect(() => {
-    setText("text is changed");
-  }, []);
-
-  useEffect(() => {
-    setText(hide ? "Value is hidden" : "Value is visible");
-    return () => {
-      console.log("cleanup");
-    };
-  }, [hide]);
-
-  const onToggle = () => {
-    setHide(!hide);
-  };
-
-  return (
-    <div>
-      <h1>{text}</h1>
-      <button onClick={onToggle}>Toggle</button>
-    </div>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route>
+        <Route path="/" element={<Root />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Route>
+    )
   );
+
+  return <RouterProvider router={router} />;
 };
 
 export default App;
