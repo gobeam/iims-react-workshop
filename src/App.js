@@ -8,6 +8,7 @@ import {
 import Root from "./components/root";
 import Login from "./components/login";
 import Register from "./components/register";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const router = createBrowserRouter(
