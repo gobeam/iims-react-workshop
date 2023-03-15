@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Root = () => {
   return (
     <Container>
       <Row>
         <Col>
-          <p>Welcome to home page</p>
-          <p>
-            <Button variant="primary">Primary</Button>{" "}
-            <Button variant="secondary">Secondary</Button>{" "}
-          </p>
+          <div
+            style={{
+              justifyContent: "center",
+            }}
+          >
+            <p>Welcome to home page</p>
+            <p>
+              <Link className="btn btn-primary" to={"/login"}>Login</Link>{" "}
+              <Link className="btn btn-secondary" to={"/register"}>Register</Link> 
+            </p>
+          </div>
         </Col>
       </Row>
     </Container>
