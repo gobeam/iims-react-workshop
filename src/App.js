@@ -8,6 +8,7 @@ import {
 import Root from "./components/root";
 import Login from "./components/login";
 import Register from "./components/register";
+import Book from "./components/book";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" element={<Root />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="book" element={<Book />} />
       </Route>
     )
   );

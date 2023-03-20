@@ -47,7 +47,9 @@ const Root = () => {
               Welcome to our application {profile.firstName} {profile.lastName}
             </p>
             {loggedIn ? (
-              <p>You are already logged in</p>
+              <p>You are already logged in <br/><Link className="btn btn-secondary" to={"/book"}>
+              Add book
+            </Link></p>
             ) : (
               <p>
                 <p>Please Login/Register:</p>
